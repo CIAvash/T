@@ -26,7 +26,7 @@ jobs:
       run: raku -v
 
     - name: Install dependencies
-      run: zef install --deps-only --/test .
+      run: zef install --deps-only --test-depends --/test .
 
     - name: Run tests
       run: prove -ve 'raku -I.' --ext rakutest
