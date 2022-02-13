@@ -1,0 +1,45 @@
+use v6.d;
+
+use Test;
+use Test::Run:auth<zef:CIAvash> :runs_ok;
+
+plan 9;
+
+my $test_runner = "$*EXECUTABLE -I. -M T -e";
+
+runs_ok :args«$test_runner 't 2 == 2'», :out(/'ok 1 - 2 == 2'/), 'Simple numberic equivalence test';
+
+runs_ok :args«$test_runner 't "abc".uc eq "ABC"'», :out(/'ok 1 - "abc".uc eq "ABC"'/), 'Simple string equivalence test';
+
+runs_ok :args«$test_runner 't "abc".uc eq "abc"'»,
+        :out(/'not ok 1 - "abc".uc eq "abc"'/),
+        :err(/'expected: "abc"' .* "matcher: 'infix:<eq>'" .* 'got: "ABC"'/),
+        :exitcode(1),
+        'Simple string equivalence test failure';
+
+runs_ok :args«$test_runner 't 4 [&(* > *)] 2'», :out(/'ok 1 - 4 [&(* > *)] 2'/), 'Custom infix test';
+
+runs_ok :args«$test_runner 't 4 [&(* < *)] 2'»,
+        :out(/'not ok 1 - 4 [&(* < *)] 2'/),
+        :err(/'expected: 2' .* "matcher: 'WhateverCode'" .* 'got: 4'/),
+        :exitcode(1),
+        'Custom infix test failure';
+
+runs_ok :args«$test_runner 't 4 < 2'»,
+        :out(/'not ok 1 - 4 < 2'/),
+        :err(/'expected: 2' .* "matcher: 'infix:«<»'" .* 'got: 4'/),
+        :exitcode(1),
+        'Infix containing "<" test failure';
+
+runs_ok :args«$test_runner 't 4 3 2'»,
+        :err(/'test needs to be of form <got> <infix> <expected>'/),
+        :exitcode(1),
+        'Invalid test';
+
+runs_ok :args«$test_runner 'sub infix:<my_infix> { $^a ~~ $^b }; t 2 my_infix Int'»,
+        :out(/'ok 1 - 2 my_infix Int'/),
+        'Custom infix sub test';
+
+runs_ok :args«$test_runner 't 2 == 2; t "a" eq "a"; say "something in between"; t Int === Int'»,
+        :out(/'ok 1 - 2 == 2' .* 'ok 2 - "a" eq "a"' .* 'something in between' .* 'ok 3 - Int === Int'/),
+        'Multiple tests with some code in between';

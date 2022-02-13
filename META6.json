@@ -1,0 +1,15 @@
+{
+    "perl": "6.d",
+    "name": "T",
+    "description": "Library and slang for writing test assertions which output good test descriptions and error messages.",
+    "authors": ["Siavash Askari Nasr"],
+    "auth": "zef:CIAvash",
+    "version": "0.1.0",
+    "tags": ["Library", "Test", "Testing", "Assertion", "Operator", "Slang", "Infix"],
+    "license": "LGPL-3.0-or-later",
+    "source-url": "https://github.com/CIAvash/T.git",
+    "provides": {
+        "T": "lib/T.rakumod"
+    },
+    "test-depends": ["Test::Run:auth<zef:CIAvash>:ver<0.2.2+>"]
+}
