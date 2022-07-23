@@ -4,7 +4,7 @@
     "description": "Library and slang for writing test assertions which output good test descriptions and error messages.",
     "authors": ["Siavash Askari Nasr"],
     "auth": "zef:CIAvash",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "tags": ["Library", "Test", "Testing", "Assertion", "Operator", "Slang", "Infix"],
     "license": "LGPL-3.0-or-later",
     "source-url": "https://codeberg.org/CIAvash/T.git",
