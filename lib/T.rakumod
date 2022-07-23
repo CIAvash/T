@@ -93,11 +93,11 @@ $*LANG.define_slang: 'MAIN',
                      $*LANG.slang_grammar('MAIN').^mixin(T::Grammar),
                      $*LANG.actions.^mixin(T::Actions)
 
-=REPOSITORY L<https://github.com/CIAvash/T>
+=REPOSITORY L<https://codeberg.org/CIAvash/T>
 
-=BUGS L<https://github.com/CIAvash/T/issues>
+=BUGS L<https://codeberg.org/CIAvash/T/issues>
 
-=AUTHOR Siavash Askari Nasr L<https://www.ciavash.name>
+=AUTHOR Siavash Askari Nasr L<https://siavash.askari-nasr.com>
 
 =COPYRIGHT Copyright © 2022 Siavash Askari Nasr
 

@@ -64,17 +64,17 @@ prove -ve 'raku -I.' --ext rakutest
 REPOSITORY
 ==========
 
-[https://github.com/CIAvash/T/](https://github.com/CIAvash/T/)
+[https://codeberg.org/CIAvash/T/](https://codeberg.org/CIAvash/T/)
 
 BUG
 ===
 
-[https://github.com/CIAvash/T/issues](https://github.com/CIAvash/T/issues)
+[https://codeberg.org/CIAvash/T/issues](https://codeberg.org/CIAvash/T/issues)
 
 AUTHOR
 ======
 
-Siavash Askari Nasr - [https://www.ciavash.name](https://www.ciavash.name)
+Siavash Askari Nasr - [https://siavash.askari-nasr.com](https://siavash.askari-nasr.com)
 
 COPYRIGHT
 =========
