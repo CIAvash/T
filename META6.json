@@ -11,5 +11,5 @@
     "provides": {
         "T": "lib/T.rakumod"
     },
-    "test-depends": ["Test::Run:auth<zef:CIAvash>:ver<0.2.2+>"]
+    "test-depends": ["Test::Run:auth<zef:CIAvash>:ver<0.2.*>"]
 }
